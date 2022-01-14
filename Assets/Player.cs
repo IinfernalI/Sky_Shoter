@@ -35,7 +35,7 @@ public class Player : MonoBehaviour
         //благодаря какой то матФормуле создаем обновленные значения полей для их ограничения 
         float clampXPos = Mathf.Clamp(newXPos, -xClamp, xClamp); //ограничение передвижения по экрану
         float clampYPos = Mathf.Clamp(newYPos, -yClamp, yClamp); //ограничение передвижения по экрану
-        //sss
+        //ssasdasdasd
         transform.localPosition = new Vector3(clampXPos, clampYPos, transform.localPosition.z);
         
     }
