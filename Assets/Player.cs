@@ -8,17 +8,24 @@ public class Player : MonoBehaviour
     //создаем переменные для скорости перемещений по X и по Y
     [Tooltip("M/S")][SerializeField] private float xSpeed = 40f;
     [Tooltip("M/S")][SerializeField] private float ySpeed = 30f;
+    
     //создаем переменные для ограничения максимального значения
     [SerializeField] float xClamp = 12.5f;
     [SerializeField] float yClamp = 9f;
-    // Start is called before the first frame update
+    
     void Start()
     {
         
     }
-
-    // Update is called once per frame
+    
     void Update()
+    {
+        MoveShip();
+        RotateShip();
+        
+    }
+
+    void MoveShip()
     {
         //создаем поля которые считывают нажатие осей и записываем их
         float xMove = CrossPlatformInputManager.GetAxis("Horizontal");
@@ -35,8 +42,13 @@ public class Player : MonoBehaviour
         //благодаря какой то матФормуле создаем обновленные значения полей для их ограничения 
         float clampXPos = Mathf.Clamp(newXPos, -xClamp, xClamp); //ограничение передвижения по экрану
         float clampYPos = Mathf.Clamp(newYPos, -yClamp, yClamp); //ограничение передвижения по экрану
-        //
-        transform.localPosition = new Vector3(clampXPos, clampYPos, transform.localPosition.z);
         
+        //заливаем уже обе готовые оси в новый вектор и в текущий трансформ , ось Z оставляем прежнюю иначе собьеться
+        transform.localPosition = new Vector3(clampXPos, clampYPos, transform.localPosition.z);
+    }
+
+    void RotateShip()
+    {
+        transform.localRotation = Quaternion.Euler(30,30,0);
     }
 }
