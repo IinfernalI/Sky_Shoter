@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
-
+[DisallowMultipleComponent]
 public class Player : MonoBehaviour
 {
     //создаем переменные для скорости перемещений по X и по Y
@@ -15,14 +15,14 @@ public class Player : MonoBehaviour
 
     [SerializeField] private float xRotFactor = -2.5f;
     [SerializeField] private float yRotFactor = 1.5f;
-    [SerializeField] private float zRotFactor = 4f;
-    
-    [SerializeField] private float xMoveRotation = 0f;
-    [SerializeField] private float yMoveRotation = 0f;
-    [SerializeField] private float zMoveRotation = 0f;
+
+    [SerializeField] private float xMoveRotation = -10f;
+    [SerializeField] private float yMoveRotation = 10f;
+    [SerializeField] private float zMoveRotation = -15f;
 
     private float xMove;
     private float yMove;
+    
     void Start()
     {
         
@@ -58,11 +58,12 @@ public class Player : MonoBehaviour
     }
 
     void RotateShip()
-    {
+    {   
+        //для полного накрекренения в зависимости от расположенния на экране
         float xRot = transform.localPosition.y * xRotFactor + yMove * xMoveRotation;
         float yRot = transform.localPosition.x * yRotFactor + xMove * yMoveRotation;
-        
-        float zRot = 0f;
+        //для накренения корпуса во время поворота
+        float zRot = xMove * zMoveRotation;
         
         transform.localRotation = Quaternion.Euler(xRot,yRot,zRot);
     }
