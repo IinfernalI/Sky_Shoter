@@ -10,9 +10,19 @@ public class Player : MonoBehaviour
     [Tooltip("M/S")][SerializeField] private float ySpeed = 30f;
     
     //создаем переменные для ограничения максимального значения
-    [SerializeField] float xClamp = 12.5f;
-    [SerializeField] float yClamp = 9f;
+    [SerializeField] float xClamp = 13.5f;
+    [SerializeField] float yClamp = 10.5f;
+
+    [SerializeField] private float xRotFactor = -2.5f;
+    [SerializeField] private float yRotFactor = 1.5f;
+    [SerializeField] private float zRotFactor = 4f;
     
+    [SerializeField] private float xMoveRotation = 0f;
+    [SerializeField] private float yMoveRotation = 0f;
+    [SerializeField] private float zMoveRotation = 0f;
+
+    private float xMove;
+    private float yMove;
     void Start()
     {
         
@@ -28,8 +38,8 @@ public class Player : MonoBehaviour
     void MoveShip()
     {
         //создаем поля которые считывают нажатие осей и записываем их
-        float xMove = CrossPlatformInputManager.GetAxis("Horizontal");
-        float yMove = CrossPlatformInputManager.GetAxis("Vertical");
+        xMove = CrossPlatformInputManager.GetAxis("Horizontal");
+        yMove = CrossPlatformInputManager.GetAxis("Vertical");
         
         //создаем поля в которые закидываем значения осей умноженные на скорость
         float xOffset = xMove * xSpeed * Time.deltaTime;
@@ -49,6 +59,11 @@ public class Player : MonoBehaviour
 
     void RotateShip()
     {
-        transform.localRotation = Quaternion.Euler(30,30,0);
+        float xRot = transform.localPosition.y * xRotFactor + yMove * xMoveRotation;
+        float yRot = transform.localPosition.x * yRotFactor + xMove * yMoveRotation;
+        
+        float zRot = 0f;
+        
+        transform.localRotation = Quaternion.Euler(xRot,yRot,zRot);
     }
 }
