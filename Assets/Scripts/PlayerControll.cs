@@ -7,30 +7,39 @@ using UnityStandardAssets.CrossPlatformInput;
 public class PlayerControll : MonoBehaviour
 {
     //создаем переменные для скорости перемещений по X и по Y
+    [Header("General")]
     [Tooltip("M/S")][SerializeField] private float xSpeed = 40f;
     [Tooltip("M/S")][SerializeField] private float ySpeed = 30f;
-    
+    [Header("RangeFlyOnScreen")]
     //создаем переменные для ограничения максимального значения отдаления корабля относительно краев экрана
     [SerializeField] float xClamp = 13.5f;
     [SerializeField] float yClamp = 10.5f;
-    
+    [Header("StaticRotation")]
     //статический фактор вращения корабля относительно позиции на экране
     [SerializeField] private float xRotFactor = -2.5f;
     [SerializeField] private float yRotFactor = 1.5f;
-    
+    [Header("RotationOnMove")]
     //второй пропадающий фактор вращения относительно маневрирования корабля 
     [SerializeField] private float xMoveRotation = -10f;
     [SerializeField] private float yMoveRotation = 10f;
     [SerializeField] private float zMoveRotation = -15f;
 
+    private bool isControllEnabled = true;
     private float xMove;
     private float yMove;
     
     void Update()
     {
-        MoveShip();
-        RotateShip();
-        
+        if (isControllEnabled)
+        {
+            MoveShip();
+            RotateShip();
+        }
+    }
+
+    void OnPlayerDeath()
+    {
+        isControllEnabled = false;
     }
     
     void MoveShip()

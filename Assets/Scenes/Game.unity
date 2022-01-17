@@ -412,6 +412,25 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &426619278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 426619275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b37422efcfcb2c429e925ad8e2f7d5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LoadLevelDelay: 2
+  ExplosionFX: {fileID: 472811389}
+--- !u!1 &472811389 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1226067988658893790, guid: 75171e146a1386c41a1d659f6f78c796, type: 3}
+  m_PrefabInstance: {fileID: 2486988673196345431}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &760428244 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4248845843280306, guid: a19af03b7c64771489f010af565cc649, type: 3}
@@ -1266,9 +1285,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 66118187}
     m_Modifications:
+    - target: {fileID: 673014073215445568, guid: 75171e146a1386c41a1d659f6f78c796, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1226067988658893790, guid: 75171e146a1386c41a1d659f6f78c796, type: 3}
       propertyPath: m_Name
       value: Explosion
+      objectReference: {fileID: 0}
+    - target: {fileID: 1226067988658893790, guid: 75171e146a1386c41a1d659f6f78c796, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1288380718653710122, guid: 75171e146a1386c41a1d659f6f78c796, type: 3}
       propertyPath: m_RootOrder
@@ -1313,6 +1340,10 @@ PrefabInstance:
     - target: {fileID: 1288380718653710122, guid: 75171e146a1386c41a1d659f6f78c796, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8155913135473500528, guid: 75171e146a1386c41a1d659f6f78c796, type: 3}
+      propertyPath: playOnAwake
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75171e146a1386c41a1d659f6f78c796, type: 3}
