@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,13 +10,15 @@ public class Player : MonoBehaviour
     [Tooltip("M/S")][SerializeField] private float xSpeed = 40f;
     [Tooltip("M/S")][SerializeField] private float ySpeed = 30f;
     
-    //создаем переменные для ограничения максимального значения
+    //создаем переменные для ограничения максимального значения отдаления корабля относительно краев экрана
     [SerializeField] float xClamp = 13.5f;
     [SerializeField] float yClamp = 10.5f;
-
+    
+    //статический фактор вращения корабля относительно позиции на экране
     [SerializeField] private float xRotFactor = -2.5f;
     [SerializeField] private float yRotFactor = 1.5f;
-
+    
+    //второй пропадающий фактор вращения относительно маневрирования корабля 
     [SerializeField] private float xMoveRotation = -10f;
     [SerializeField] private float yMoveRotation = 10f;
     [SerializeField] private float zMoveRotation = -15f;
@@ -33,6 +36,16 @@ public class Player : MonoBehaviour
         MoveShip();
         RotateShip();
         
+    }
+
+    /*private void OnCollisionEnter(Collision collision)
+    {
+        print("Destroy");
+    }*/
+
+    private void OnTriggerEnter(Collider other)
+    {
+        print("HIT");
     }
 
     void MoveShip()
@@ -62,7 +75,7 @@ public class Player : MonoBehaviour
         //для полного накрекренения в зависимости от расположенния на экране
         float xRot = transform.localPosition.y * xRotFactor + yMove * xMoveRotation;
         float yRot = transform.localPosition.x * yRotFactor + xMove * yMoveRotation;
-        //для накренения корпуса во время поворота
+        //для накренения корпуса во время поворота (временное значение в момент нажатия)
         float zRot = xMove * zMoveRotation;
         
         transform.localRotation = Quaternion.Euler(xRot,yRot,zRot);
