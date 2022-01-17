@@ -4,23 +4,11 @@ using UnityEngine;
 
 public class CollisionHandler : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     
     /*private void OnCollisionEnter(Collision collision)
     {
         print("Destroy");
     }*/
-
     private void OnTriggerEnter(Collider other)
     {
         print("HIT");

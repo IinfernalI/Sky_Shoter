@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 [DisallowMultipleComponent]
-public class Player : MonoBehaviour
+public class PlayerControll : MonoBehaviour
 {
     //создаем переменные для скорости перемещений по X и по Y
     [Tooltip("M/S")][SerializeField] private float xSpeed = 40f;
@@ -25,11 +25,6 @@ public class Player : MonoBehaviour
 
     private float xMove;
     private float yMove;
-    
-    void Start()
-    {
-        
-    }
     
     void Update()
     {
