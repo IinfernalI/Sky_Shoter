@@ -37,17 +37,7 @@ public class Player : MonoBehaviour
         RotateShip();
         
     }
-
-    /*private void OnCollisionEnter(Collision collision)
-    {
-        print("Destroy");
-    }*/
-
-    private void OnTriggerEnter(Collider other)
-    {
-        print("HIT");
-    }
-
+    
     void MoveShip()
     {
         //создаем поля которые считывают нажатие осей и записываем их
