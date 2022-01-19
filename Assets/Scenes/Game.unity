@@ -207,6 +207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bd96c7ca7cd49c429bda76fb822fc06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathFX: {fileID: 1226067988658893790, guid: 75171e146a1386c41a1d659f6f78c796, type: 3}
 --- !u!1 &135762545 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1074994750746910, guid: 6d7afa73fcb1fce4cb4b65361a29bcbd, type: 3}
@@ -224,6 +225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bd96c7ca7cd49c429bda76fb822fc06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathFX: {fileID: 1226067988658893790, guid: 75171e146a1386c41a1d659f6f78c796, type: 3}
 --- !u!1 &159282280 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1090395654553690, guid: e14d375f5a36551479fc2f172353b1ba, type: 3}
@@ -246,6 +248,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bd96c7ca7cd49c429bda76fb822fc06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathFX: {fileID: 1226067988658893790, guid: 75171e146a1386c41a1d659f6f78c796, type: 3}
 --- !u!1001 &176759313
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -570,7 +573,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4655758116509614, guid: 60f26d6465b822444ab5dadf5986bb35, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 104.34851
+      value: 106.3
       objectReference: {fileID: 0}
     - target: {fileID: 4655758116509614, guid: 60f26d6465b822444ab5dadf5986bb35, type: 3}
       propertyPath: m_LocalPosition.y
@@ -578,7 +581,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4655758116509614, guid: 60f26d6465b822444ab5dadf5986bb35, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 668.9479
+      value: 654.9
       objectReference: {fileID: 0}
     - target: {fileID: 4655758116509614, guid: 60f26d6465b822444ab5dadf5986bb35, type: 3}
       propertyPath: m_LocalRotation.w
@@ -803,6 +806,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bd96c7ca7cd49c429bda76fb822fc06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathFX: {fileID: 1226067988658893790, guid: 75171e146a1386c41a1d659f6f78c796, type: 3}
 --- !u!1 &807715391 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1469320689751860, guid: a19af03b7c64771489f010af565cc649, type: 3}
@@ -820,6 +824,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bd96c7ca7cd49c429bda76fb822fc06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathFX: {fileID: 1226067988658893790, guid: 75171e146a1386c41a1d659f6f78c796, type: 3}
 --- !u!1 &1017356392 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1754910023302818, guid: 60f26d6465b822444ab5dadf5986bb35, type: 3}
@@ -842,6 +847,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bd96c7ca7cd49c429bda76fb822fc06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathFX: {fileID: 1226067988658893790, guid: 75171e146a1386c41a1d659f6f78c796, type: 3}
 --- !u!1001 &1041985994
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1492,6 +1498,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bd96c7ca7cd49c429bda76fb822fc06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathFX: {fileID: 1226067988658893790, guid: 75171e146a1386c41a1d659f6f78c796, type: 3}
 --- !u!4 &1480948938 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4990607877152018, guid: 6d7afa73fcb1fce4cb4b65361a29bcbd, type: 3}
@@ -1790,7 +1797,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4248845843280306, guid: a19af03b7c64771489f010af565cc649, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 487.3574
+      value: 487.4
       objectReference: {fileID: 0}
     - target: {fileID: 4248845843280306, guid: a19af03b7c64771489f010af565cc649, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1847,6 +1854,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bd96c7ca7cd49c429bda76fb822fc06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathFX: {fileID: 1226067988658893790, guid: 75171e146a1386c41a1d659f6f78c796, type: 3}
 --- !u!1 &1795662218
 GameObject:
   m_ObjectHideFlags: 0

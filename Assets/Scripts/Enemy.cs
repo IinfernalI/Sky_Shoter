@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    [SerializeField] private GameObject deathFX;
+    [SerializeField] private Transform parent;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -35,7 +38,11 @@ public class Enemy : MonoBehaviour
     
     private void OnParticleCollision(GameObject other)
     {
+        //берем заранее прикрепленный префаб взрыва в deathFX и переносим его в новый обьект GameObject
+        GameObject fx = Instantiate(deathFX, transform.position, Quaternion.identity); //взрыв от обьекта
+        fx.transform.parent = parent; //Присваеваем новый обьект в обьект родителя для удаления муссора
+        
+        Destroy(gameObject); 
         print("Kill" + gameObject.name);
-        Destroy(gameObject);
     }
 }
