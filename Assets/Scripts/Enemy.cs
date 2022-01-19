@@ -12,7 +12,6 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         AddNonTriggerColider();
-        
     }
 
     /// <summary>
