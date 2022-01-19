@@ -2,15 +2,20 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private GameObject deathFX;
     [SerializeField] private Transform parent;
+    [SerializeField] private int scorePerHit = 10;
+
+    private Score scoreObj;
     
     // Start is called before the first frame update
     void Start()
     {
+        scoreObj = FindObjectOfType<Score>();
         AddNonTriggerColider();
     }
 
@@ -40,6 +45,8 @@ public class Enemy : MonoBehaviour
         //берем заранее прикрепленный префаб взрыва в deathFX и переносим его в новый обьект GameObject
         GameObject fx = Instantiate(deathFX, transform.position, Quaternion.identity); //взрыв от обьекта
         fx.transform.parent = parent; //Присваеваем новый обьект в обьект родителя для удаления муссора
+        
+        scoreObj.ScoreHit(scorePerHit);
         
         Destroy(gameObject); 
         print("Kill" + gameObject.name);

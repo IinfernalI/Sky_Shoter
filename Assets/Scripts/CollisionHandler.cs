@@ -23,6 +23,7 @@ public class CollisionHandler : MonoBehaviour
 
     void StartDeath()
     {
+        //метод который ищет и запускает указанный метод на данном обьекте если он есть 
         SendMessage("OnPlayerDeath");
     }
 
