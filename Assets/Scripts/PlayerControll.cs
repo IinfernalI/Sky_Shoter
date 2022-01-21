@@ -10,6 +10,7 @@ public class PlayerControll : MonoBehaviour
     [Header("General")]
     [Tooltip("M/S")][SerializeField] private float xSpeed = 40f;
     [Tooltip("M/S")][SerializeField] private float ySpeed = 30f;
+    [SerializeField] private GameObject[] guns;
     [Header("RangeFlyOnScreen")]
     //создаем переменные для ограничения максимального значения отдаления корабля относительно краев экрана
     [SerializeField] float xClamp = 13.5f;
@@ -34,6 +35,7 @@ public class PlayerControll : MonoBehaviour
         {
             MoveShip();
             RotateShip();
+            FireGuns();
         }
     }
 
@@ -74,4 +76,37 @@ public class PlayerControll : MonoBehaviour
         
         transform.localRotation = Quaternion.Euler(xRot,yRot,zRot);
     }
+
+    void FireGuns()
+    {
+        if (CrossPlatformInputManager.GetButton("Fire"))
+        {
+            ActiveGuns();
+        }
+        else
+        {
+            DeactiveGuns();
+        }
+    }
+    
+    void ActiveGuns()
+    {
+        if (CrossPlatformInputManager.GetButton("Fire"))
+        {
+            foreach (GameObject gun in guns)
+            {
+                gun.SetActive(true);
+            }
+        }
+    }
+
+    void DeactiveGuns()
+    {
+        foreach (GameObject gun in guns)
+        { 
+            gun.SetActive(false);
+        }
+    }
+
+    
 }
