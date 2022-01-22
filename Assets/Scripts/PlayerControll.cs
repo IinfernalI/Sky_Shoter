@@ -91,12 +91,10 @@ public class PlayerControll : MonoBehaviour
     
     void ActiveGuns()
     {
-        if (CrossPlatformInputManager.GetButton("Fire"))
-        {
-            foreach (GameObject gun in guns)
-            {
-                gun.SetActive(true);
-            }
+        foreach (GameObject gun in guns) 
+        { 
+            
+            gun.GetComponent<ParticleSystem>().enableEmission = true;
         }
     }
 
@@ -104,7 +102,7 @@ public class PlayerControll : MonoBehaviour
     {
         foreach (GameObject gun in guns)
         { 
-            gun.SetActive(false);
+            gun.GetComponent<ParticleSystem>().enableEmission = false;
         }
     }
 
