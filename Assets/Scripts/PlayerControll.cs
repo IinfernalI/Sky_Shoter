@@ -11,14 +11,17 @@ public class PlayerControll : MonoBehaviour
     [Tooltip("M/S")][SerializeField] private float xSpeed = 40f;
     [Tooltip("M/S")][SerializeField] private float ySpeed = 30f;
     [SerializeField] private GameObject[] guns;
+    
     [Header("RangeFlyOnScreen")]
     //создаем переменные для ограничения максимального значения отдаления корабля относительно краев экрана
     [SerializeField] float xClamp = 13.5f;
     [SerializeField] float yClamp = 10.5f;
+    
     [Header("StaticRotation")]
     //статический фактор вращения корабля относительно позиции на экране
     [SerializeField] private float xRotFactor = -2.5f;
     [SerializeField] private float yRotFactor = 1.5f;
+    
     [Header("RotationOnMove")]
     //второй пропадающий фактор вращения относительно маневрирования корабля 
     [SerializeField] private float xMoveRotation = -10f;
@@ -39,7 +42,7 @@ public class PlayerControll : MonoBehaviour
         }
     }
 
-    void OnPlayerDeath()
+    public void OnPlayerDeath()
     {
         isControllEnabled = false;
     }
